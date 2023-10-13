@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-    void _decrementCounter() {
+  void _decrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -77,6 +77,16 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter--;
     });
   }
+  void _cleanCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter=0;
+    });
+  }  
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +152,12 @@ class _MyHomePageState extends State<MyHomePage> {
             backgroundColor: Colors.red,
             child: const Icon(Icons.remove_sharp),
           ),
+          FloatingActionButton(
+            onPressed: _cleanCounter,
+            tooltip: 'Increment',
+            backgroundColor: Colors.grey,
+            child: const Icon(Icons.cleaning_services),
+          ),          
         ],
       ),
        // This trailing comma makes auto-formatting nicer for build methods.
